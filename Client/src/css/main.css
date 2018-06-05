@@ -16,6 +16,10 @@ Grey dark 3: #999
 
 */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700);
+@import url(../../node_modules/bootstrap/dist/css/bootstrap.min.css);
+/* @import url(../../node_modules/font-awesome/css/font-awesome.min.css); */
+@import url(../../node_modules/flag-icon-css/css/flag-icon.css);
+@import url(../../node_modules/react-select/dist/react-select.css);
 :root {
   --color-primary-profile: #eb2f64;
   --color-primary-light-profile:#FF3366;
@@ -576,13 +580,13 @@ form button[type=submit] {
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
-/*    .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/adult-doctor-girl-355934.jpg); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/Acupuncture.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/adult-africa-african-1089550.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/Chiropractor.png); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/arms-care-check-905874.jpg); }
-*/  .card__heading {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/Massage_Therapy.jpg); }
+  .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -799,3 +803,51 @@ form button[type=submit] {
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
   top: 0;
   transform: rotate(-135deg); }
+
+body {
+  background: #fc00ff;
+  /* fallback for old browsers */
+  background: linear-gradient(to left, #00d0ff, #de0000b3);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding-top: 25px; }
+
+a {
+  color: inherit; }
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform; }
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1); }
+
+.addUserSection {
+  background-color: rgba(50, 50, 50, 0.3);
+  padding: 40px;
+  color: white;
+  border-radius: 3px; }
+
+.fa {
+  cursor: pointer; }
+  .fa:hover {
+    color: white; }
+
+.card-columns .card {
+  color: #323232;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .card-columns .card .text-muted {
+    background: white;
+    padding: 10px;
+    border-radius: 40px; }

@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 import '../scss/main.scss';
+// import '../scss/pages/providers.scss';
 
 function ServicesCard(props) {
-  const descriptions = props.descriptions.map(description => {
-    return <li>{ description }</li>
+  const descriptions = props.descriptions.map((description, index) => {
+    return <li key={props.id + '_' + index} >{ description }</li>
   });
+
+  const path = `/services/${props.id}/providers`
+
 
   return (
     <div className="col-1-of-3">
@@ -29,6 +35,8 @@ function ServicesCard(props) {
                         <p className="card__price-only">From</p>
                         <p className="card__price-value">{ props.price }</p>
                     </div>
+                    <Link to={path} className="btn btn--white">Book now!
+                    </Link>
                     <a href="#" className="btn btn--white">Book now!</a>
                 </div>
             </div>
@@ -45,26 +53,32 @@ class Services extends Component {
             cards: [
             {title: 'Nurse',
             price: '50/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '1'
             },
             {title: 'Physical Therapy',
             price: '60/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '2'
             },
             {title: 'Mental Wellness',
             price: '30/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '3'
             },
             {title: 'Nurse',
             price: '20/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '4'
             },
             {title: 'Physical Therapy',
             price: '70/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '5'
             },{title: 'Mental Wellness',
             price: '80/houre',
-            descriptions: ['Add Description', 'Add Description', 'Add Description']
+            descriptions: ['Add Description', 'Add Description', 'Add Description'],
+            id: '6'
             }]
         }
     }
@@ -76,7 +90,7 @@ class Services extends Component {
 
     render() {
         const cards = this.state.cards.map(card => {
-            return <ServicesCard title={ card.title } price={ card.price } descriptions={ card.descriptions } />
+            return <ServicesCard key={card.id} id={card.id} title={ card.title } price={ card.price } descriptions={ card.descriptions } />
         })
 
         return (
